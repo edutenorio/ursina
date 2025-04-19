@@ -17,10 +17,10 @@ combine_parent = Entity(enabled=False)
 for i, direction in enumerate((Vec3.right, Vec3.up, Vec3.forward)):
 
     e = Entity(parent=combine_parent, model='plane', origin_y=-.5, texture='white_cube', color=cube_colors[i*2])
-    e.look_at(direction, Vec3.up)
+    e.look_at(direction, up=Vec3.up)
 
     e_flipped = Entity(parent=combine_parent, model='plane', origin_y=-.5, texture='white_cube', color=cube_colors[(i*2)+1])
-    e_flipped.look_at(-direction, Vec3.up)
+    e_flipped.look_at(-direction, up=Vec3.up)
 
 combine_parent.combine()
 
